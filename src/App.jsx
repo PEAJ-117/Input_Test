@@ -1,9 +1,22 @@
 import { useState } from "react"
 
 function App() {
+  const [inputValue, setInputValue] = useState("3");
+  const handleChangeInput = (e) => {
+    setInputValue(e.target.value);
+  }
 
   return (
-    <div></div>
+    <div style={{ textAlign: "center" }}>
+      <h1>Input Test</h1>
+      <hr />
+      <input
+      onChange={(e) => handleChangeInput(e)}
+      type="text"
+      name="test"
+      value={inputValue}
+      />
+    </div>
   )
 }
 
